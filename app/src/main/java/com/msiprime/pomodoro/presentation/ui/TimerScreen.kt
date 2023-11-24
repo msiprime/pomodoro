@@ -1,17 +1,12 @@
 package com.msiprime.pomodoro.presentation.ui
 
 
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.text.KeyboardActions
-import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import com.msiprime.pomodoro.domain.TimerState
 import com.msiprime.pomodoro.domain.TimerUseCase
@@ -20,7 +15,7 @@ import kotlinx.coroutines.launch
 
 @Composable
 fun TimerScreen(timerUseCase: TimerUseCase) {
-    var elapsedTime by remember { mutableStateOf(0L) }
+    var elapsedTime by remember { mutableLongStateOf(0L) }
     var timerState by remember { mutableStateOf(TimerState.IDLE) }
 
     val coroutineScope = rememberCoroutineScope()
